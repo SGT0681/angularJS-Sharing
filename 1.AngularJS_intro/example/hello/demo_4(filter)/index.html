@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body ng-app="helloApp">
+        <div ng-controller="helloCtrl">
+            <input ng-model="name" placeholder="type your name!"><br>
+            Hello. I'm {{name}}.
+            <br>
+            I like 
+            <span ng-repeat="like in likes">{{like}}&nbsp;</span>
+            <br>
+            <accordion>
+                <accordion-group heading="likes">
+                    <ul>
+                        <li ng-repeat="like in likes">{{like}}</li>
+                    </ul>
+                </accordion-group>
+                <accordion-group heading="skills">
+                    <ul>
+                        <li ng-repeat="skill in skills">{{skill}}</li>
+                    </ul>
+                </accordion-group>
+            </accordion>
+            <div>
+                <h4>Ordered likes</h4>
+                <ul>
+                    <li ng-repeat="like in likes | orderBy:'toString()'">{{like}}</li>
+                </ul>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+        <script src="./hello.js"></script>
+        <script src="../bootstrap-0.10.0/ui-bootstrap-tpls-0.10.0.min.js"></script>
+    </body>
+</html>

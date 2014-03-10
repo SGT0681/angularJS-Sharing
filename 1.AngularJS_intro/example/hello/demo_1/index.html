@@ -1,0 +1,13 @@
+<html>
+    <body ng-app="helloApp">
+        <div ng-controller="helloCtrl">
+            <input ng-model="name" placeholder="type your name!"><br>
+            Hello. I'm {{name}}.
+            <br>
+            I like 
+            <span ng-repeat="like in likes">{{like}}&nbsp;</span>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+        <script src="./hello.js"></script>
+    </body>
+</html>

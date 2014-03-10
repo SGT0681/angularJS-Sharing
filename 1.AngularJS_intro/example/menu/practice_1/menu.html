@@ -1,0 +1,26 @@
+<html>
+    <body ng-app="menu">
+        <h3>Menu</h3>
+        <div ng-controller="menuCtrl">
+            <ul>
+                <li ng-repeat="item in menu">{{item.name}} : {{item.price}}</li>
+            </ul>
+            <hr>
+            <div>
+                <h4>Add new item</h4>
+                <div>
+                    <span>Name:</span><input ng-model="newItem.name">
+                </div>
+                <div>
+                    <span>Price:</span><input ng-model="newItem.price">
+                </div>
+                <div>
+                    {{newItem.name}} : {{newItem.price}}
+                </div>
+                <!-- <button>Add New Item</button> -->
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+        <script src="./menu.js"></script>
+    </body>
+</html>

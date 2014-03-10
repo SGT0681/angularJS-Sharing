@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body ng-app="menu">
+        <h3>Menu</h3>
+        <div ng-controller="menuCtrl">
+            <accordion>
+                <accordion-group heading="Food">
+                    <ul>
+                        <li ng-repeat="item in food | orderBy:'name'">{{item.name}} : {{item.price | currency}}</li>
+                    </ul>
+                </accordion-group>
+                <accordion-group heading="Drink">
+                    <ul>
+                        <li ng-repeat="item in drink | orderBy:'name.toString()'">{{item.name}} : {{item.price | currency}}</li>
+                    </ul>
+                </accordion-group>
+            </accordion>
+            <!-- <ul>
+                <li ng-repeat="item in menu">{{item.name}} : {{item.price}}</li>
+            </ul> -->
+            <hr>
+            <div>
+                <h4>Add new item</h4>
+                <div>
+                    <span>Name:</span><input ng-model="newItem.name">
+                </div>
+                <div>
+                    <span>Price:</span><input ng-model="newItem.price">
+                </div>
+                <div>
+                    <input type="radio" value="food" ng-model="newItemType"> Food <br>
+                    <input type="radio" value="drink" ng-model="newItemType"> Drink <br>
+                </div>
+                <div>
+                    {{newItem.name}} : {{newItem.price | currency}}
+                    <br>
+                    Type: {{newItemType}}
+                </div>
+                <button ng-click="addNewItem()">Add New Item</button>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+        <script src="./menu.js"></script>
+        <script src="../bootstrap-0.10.0/ui-bootstrap-tpls-0.10.0.min.js"></script>
+    </body>
+</html>
