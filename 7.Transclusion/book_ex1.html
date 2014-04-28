@@ -1,0 +1,40 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+</head>
+<body ng-app="app">
+    <div ng-controller="Ctrl">
+        <div>
+          <input type="text" ng-model="name" />
+          <select ng-model="movie">
+            <option value="Man Of Steel">Superman</option>
+            <option value="A New Hope">Star Wars</option>
+          </select>
+          <input type="number" ng-model="friendCount" />
+        </div>
+        <div movie-info="movie">
+          <p>Hi, I'm {{name}}, and I'm going to see {{movie}} with {{friendCount}} friends</p>
+        </div>
+    </div>
+
+    <script>
+    var app = angular.module('app',[]);
+        app.controller('Ctrl', function($scope){
+        });
+
+        app.directive('movieInfo', function () {
+          return {
+            template : '<div class="movie-info">' +
+              '<h1 class=”movie-title”>{{name}}</h1>' +
+              '<img class=”movie-poster” ng-src="posters/{{name}}.jpg"/>' +
+              '<div ng-transclude></div>' +
+            '</div>',
+            transclude : true,
+            scope : {
+              'name' : '=movieInfo'
+            }
+          }
+        });
+    </script>
+</body>
+</html>
