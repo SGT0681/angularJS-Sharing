@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="lib/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.css"/>
+  <link rel="stylesheet" href="lib/jquery-ui-timepicker/jquery.timepicker.css"/>
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="#/broadcast_emit">$broadcast / $emit</a></li>
+    <li><a href="#/timepicker">Time Picker</a></li>
+    <li><a href="#/tabPane">Tab and Pane</a></li>
+  </ul>
+
+  <div ng-view></div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="lib/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"></script>
+  <script src="lib/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+  <script src="lib/jquery-ui-timepicker/jquery.timepicker.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
